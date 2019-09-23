@@ -1,5 +1,13 @@
 # Google Cloud Platform - GCP
 
+  - [Create an Account](#create-an-account)
+  - [Setting a Cloud Budget](#setting-a-cloud-budget)
+  - [Choose a Terminal](#choose-a-terminal)
+    - [Use a Web Based Terminal](#use-a-web-based-terminal)
+    - [Use Your Own Computer’s Terminal](#use-your-own-computers-terminal)
+  - [Configuring Default Settings for GCP](#configuring-default-settings-for-gcp)
+
+
 
 ## Create an Account
 
@@ -55,7 +63,8 @@ Start Google Cloud Shell from https://console.cloud.google.com/ by clicking 
 1. Download and install the **gcloud** command line tool at its [install page](https://cloud.google.com/sdk/install). It will help you create and communicate with the Container Registry, Build Engine, Container Engine and Kubernetes cluster.
 2. Install **kubectl** (reads kube control), it is a tool for controlling Kubernetes clusters in general. From your terminal, enter:
 
-~~~    gcloud components install kubectl
+~~~
+    gcloud components install kubectl
 ~~~
 
 ## Configuring Default Settings for GCP
