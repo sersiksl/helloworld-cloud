@@ -6,6 +6,7 @@
     - [Use a Web Based Terminal](#use-a-web-based-terminal)
     - [Use Your Own Computer’s Terminal](#use-your-own-computers-terminal)
   - [Configuring Default Settings for GCP](#configuring-default-settings-for-gcp)
+  - [GCP Cheat Sheet](#gcp-cheat-sheet)
 
 
 
@@ -74,4 +75,11 @@ Configuring default settings makes it easier to run gcloud commands, since gclou
 When you create GKE resources after configuring your default project and compute zone, the resources are automatically created in that project and zone.
 
 Link: https://cloud.google.com/sdk/gcloud/reference/config/set
+
+## GCP Cheat Sheet
+
+- [Google Developers Console Home](https://console.cloud.google.com/cloud-resource-manager)
+- [Google Container Registry](https://console.cloud.google.com/gcr/images/hands-on-firsttry)
+- [Google Cloud Builds](https://console.cloud.google.com/cloud-build/builds)
+- [Google Cloud Run](https://console.cloud.google.com/run)
 
