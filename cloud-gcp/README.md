@@ -43,7 +43,7 @@ Documentation of the whole process - Free Trial, End of Free Trial, Credit Cards
 
 ## Setting a Cloud Budget
 
-Consider setting a cloud budget (https://cloud.google.com/billing/docs/how-to/budgets) for your Google Cloud account in order to make sure you don’t accidentally spend more than you wish to. You should be carefull also with your play-money (the $300)
+Consider setting a [cloud budget](https://cloud.google.com/billing/docs/how-to/budgets) for your Google Cloud account in order to make sure you don’t accidentally spend more than you wish to. You should be carefull also with your play-money (the $300).
 
 
 ## Choose a Terminal
