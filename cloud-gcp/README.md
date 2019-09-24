@@ -51,7 +51,7 @@ Consider setting a [cloud budget](https://cloud.google.com/billing/docs/how-to/
 You can choose either to use a web based terminal or install and run the required command line interfaces on your own computer’s terminal. There is no recommended terminal, you should use what you feel more comfortable with in a special situation. Below are both sets of instructions.
 
 ### Use a Web Based Terminal
-Start Google Cloud Shell from https://console.cloud.google.com/ by clicking the button shown below. You are now in control of a virtual machine with various tools preinstalled. If you save something in a user folder they will remain available to you if you return at a later stage. Additional documentation about Google Cloud shell is available [here](https://cloud.google.com/shell/docs/).
+Start Google Cloud Shell from the [GCP Console](https://console.cloud.google.com/) by clicking the button shown below. You are now in control of a virtual machine with various tools preinstalled. If you save something in a user folder they will remain available to you if you return at a later stage. Additional documentation about Google Cloud shell is available [here](https://cloud.google.com/shell/docs/).
 
 ![Docker Components](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/blob/master/cloud-gcp/images/gcp-webbasedterminal-link.png)
 
