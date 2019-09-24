@@ -25,6 +25,7 @@ Documentation of the whole process - Free Trial, End of Free Trial, Credit Cards
 
     ![Docker Components](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/blob/master/cloud-gcp/images/gcp-credits.png)
 
+* Education Offers - Google offers the possibility to get additional credits - https://edu.google.com/programs/credits/?modal_active=none
 * Always free products
     * Clusters - All size clusters - [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/)
         * One-click container orchestration via Kubernetes clusters, managed by Google.
