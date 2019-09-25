@@ -1,14 +1,11 @@
 # Microsoft Azure
 
-## Create an Account
-
-* Starting point for Students - https://azure.microsoft.com/en-us/free/students/
-    * $100 credit when you create your free Azure for Students account
-    * No credit card needed
-    * Student status verified through student email address
-
-* For not students - 
-
+  - [Create an Account](#create-an-account)
+  - [Choose a Terminal](#choose-a-terminal)
+    - [Use a Web Based Terminal](#use-a-web-based-terminal)
+    - [Use Your Own Computer’s Terminal](#use-your-own-computers-terminal)
+  - [Tutorials](#tutorials)
+  - [Cheat Sheet](#cheat-sheet)
 
 ## Create an Account
 
