@@ -1,5 +1,15 @@
 # Docker Containers
 
+  - [Docker image, container, registry, engine ... how do these work together?](#docker-image-container-registry-engine--how-do-these-work-together)
+  - [How do I set-up Docker?](#how-do-i-set-up-docker)
+      - [Have you previously installed Docker Toolbox, Docker Machine, or VirtualBox? (if not, just ignore this section)](#have-you-previously-installed-docker-toolbox-docker-machine-or-virtualbox-if-not-just-ignore-this-section)
+  - [How do I create a Docker Image? ](#how-do-i-create-a-docker-image-)
+    - [Prepare the code for Docker Container](#prepare-the-code-for-docker-container)
+    - [Build the image](#build-the-image)
+  - [Docker Cheat-Sheet](#docker-cheat-sheet)
+  - [Next Steps](#next-steps)
+
+
 **What do containers have to do with the cloud?**
 Cloud portability is the selling point: containers typically mean that programmers won't have to rewrite the code for each new operating system and cloud platform. What's more, applications continue to evolve their focus from the narrow, such as a desktop PC, to the wide, such as a cloud that can serve millions of users on a wide variety of mobile and stationary devices. Using containers allows those applications to scale, as well as setting a clear path between source and target platforms. Moving containers from one cloud provider to another is as simple as downloading them onto the new servers.
 
