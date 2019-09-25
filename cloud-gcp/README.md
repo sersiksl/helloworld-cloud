@@ -77,6 +77,13 @@ When you create GKE resources after configuring your default project and compute
 
 Link: https://cloud.google.com/sdk/gcloud/reference/config/set
 
+
+## Tutorials
+* Coursera GCP Fundamentals: https://www.coursera.org/lecture/gcp-fundamentals/welcome-to-gcp-fundamentals-I6zpd
+* Google Cloud Platform Collection of tutorials: https://cloud.google.com/docs/tutorials
+* Quick Start for Containers: https://cloud.google.com/cloud-build/docs/quickstart-docker
+
+
 ## GCP Cheat Sheet
 
 - [Google Developers Console Home](https://console.cloud.google.com/cloud-resource-manager)
