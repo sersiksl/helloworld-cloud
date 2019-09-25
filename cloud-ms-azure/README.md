@@ -63,7 +63,6 @@ You can also a local installation of the Azure CLI. If you'd like to use it loca
 ## Cheat Sheet
 * [Cloud Shell](https://shell.azure.com) 
 * [Container Registry](https://portal.azure.com/#create/Microsoft.ContainerRegistry)
-* 
 
 
 
