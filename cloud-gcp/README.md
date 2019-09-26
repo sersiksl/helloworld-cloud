@@ -6,6 +6,7 @@
     - [Use a Web Based Terminal](#use-a-web-based-terminal)
     - [Use Your Own Computer’s Terminal](#use-your-own-computers-terminal)
   - [Configuring Default Settings for GCP](#configuring-default-settings-for-gcp)
+  - [Tutorials](#tutorials)
   - [GCP Cheat Sheet](#gcp-cheat-sheet)
 
 
