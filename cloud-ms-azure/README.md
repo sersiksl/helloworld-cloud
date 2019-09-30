@@ -22,7 +22,7 @@ Link for students: https://azure.microsoft.com/en-us/free/students/
 
 * You must provide credit card or bank details to set up a billing account to verify your identity, but you won't be charged during the free trial.
 
-    ![Docker Components](cloud-ms-azure/images/ms-azure-logininfos.png)
+    ![Docker Components](images/ms-azure-logininfos.png)
 
 * Possibility to schedule a live demo to see Azure in action
 * Microsoft-Like Tour through the portal
@@ -44,11 +44,11 @@ To launch Azure Cloud Shell there are 2 Options:
 
 1. Go to [https://shell.azure.com](https://shell.azure.com) or select the Launch Cloud Shell button to open Cloud Shell in your browser.
 
-    ![Docker Components](cloud-ms-azure/images/ms-azure-cloud-shell.png)
+    ![Docker Components](images/ms-azure-cloud-shell.png)
 
 2. Select the Cloud Shell button on the top-right menu bar in the [Azure portal](https://portal.azure.com/).
 
-    ![Docker Components](cloud-ms-azure/images/ms-azure-cloud-shell-menu.png)
+    ![Docker Components](images/ms-azure-cloud-shell-menu.png)
 
 ### Use Your Own Computer’s Terminal
 You can also a local installation of the Azure CLI. If you'd like to use it locally, version 2.0.55 or later is recommended. Run az --version to find the version. If you need to install or upgrade, see [Install Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).

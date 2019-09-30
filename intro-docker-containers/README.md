@@ -211,7 +211,7 @@ docker build <path to docker file>
 ## Next Steps
 Now that you can create images, you should try to deploy containers on the different clouds:
 
-* [Google Cloud Platform - GCP](cloud-gcp)
-* [Microsoft Azure](cloud-ms-azure)
-* [AWS](cloud-aws)
-* [IBM Cloud](cloud-ibm-cloud)
+* [Google Cloud Platform - GCP](../cloud-gcp)
+* [Microsoft Azure](../cloud-ms-azure)
+* [AWS](../cloud-aws)
+* [IBM Cloud](../cloud-ibm-cloud)
