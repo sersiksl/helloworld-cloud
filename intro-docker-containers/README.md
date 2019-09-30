@@ -2,6 +2,8 @@
 
   - [Docker image, container, registry, engine ... how do these work together?](#docker-image-container-registry-engine--how-do-these-work-together)
   - [How do I set-up Docker?](#how-do-i-set-up-docker)
+      - [Install Docker on Mac](#install-docker-on-mac)
+      - [Install Docker on Windows 10](#install-docker-on-windows-10)
       - [Have you previously installed Docker Toolbox, Docker Machine, or VirtualBox? (if not, just ignore this section)](#have-you-previously-installed-docker-toolbox-docker-machine-or-virtualbox-if-not-just-ignore-this-section)
   - [How do I create a Docker Image? ](#how-do-i-create-a-docker-image-)
     - [Prepare the code for Docker Container](#prepare-the-code-for-docker-container)
@@ -17,7 +19,7 @@ Cloud portability is the selling point: containers typically mean that programme
 ![Docker Components](images/DockerComponents.png)
 
 ## How do I set-up Docker?
-###Install Docker on Mac
+### Install Docker on Mac
 Docker for Mac offers a Mac native application that installs in /Applications. It creates symlinks (symbolic links) in /usr/local/bin for docker and docker-compose to the Mac versions of the commands in the application bundle.
 
 The Docker for Mac bundle installs:
@@ -28,7 +30,7 @@ The Docker for Mac bundle installs:
 
 Download and install: [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/)
 
-###Install Docker on Windows 10
+### Install Docker on Windows 10
 Docker for Windows runs on 64-bit Windows 10 Pro, Enterprise, and Education; 1511 November update, Build 10586 or later. Docker plans to support more versions of Windows 10 in the future.
 
 Download and install: [https://docs.docker.com/docker-for-windows/install/](https://docs.docker.com/docker-for-windows/install/)
