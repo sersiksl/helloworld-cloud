@@ -12,4 +12,4 @@ Otherwise, you can jump to the cloud of your interest:
 * [Google Cloud Platform - GCP](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/tree/master/cloud-gcp)
 * [Microsoft Azure](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/tree/master/cloud-ms-azure)
 * [AWS](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/tree/master/cloud-aws)
-* [IBM Cloud](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/tree/master/cloud-ibm-cloud)
+* [IBM Cloud](cloud-ibm-cloud)
