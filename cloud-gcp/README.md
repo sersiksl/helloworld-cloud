@@ -22,9 +22,9 @@ Documentation of the whole process - Free Trial, End of Free Trial, Credit Cards
 * for the first 12 Months $300 free credit with any GCP (Google Cloud Platform) product
     * You must provide credit card or bank details to set up a billing account to verify your identity, but you won't be charged during the free trial.
 
-    ![Docker Components](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/blob/master/cloud-gcp/images/gcp-welcome.png)
+    ![Docker Components](cloud-gcp/images/gcp-welcome.png)
 
-    ![Docker Components](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/blob/master/cloud-gcp/images/gcp-credits.png)
+    ![Docker Components](cloud-gcp/images/gcp-credits.png)
 
 * Education Offers - Google offers the possibility to get additional credits - https://edu.google.com/programs/credits/?modal_active=none
 * Always free products
@@ -56,9 +56,9 @@ You can choose either to use a web based terminal or install and run the require
 ### Use a Web Based Terminal
 Start Google Cloud Shell from the [GCP Console](https://console.cloud.google.com/) by clicking the button shown below. You are now in control of a virtual machine with various tools preinstalled. If you save something in a user folder they will remain available to you if you return at a later stage. Additional documentation about Google Cloud shell is available [here](https://cloud.google.com/shell/docs/).
 
-![Docker Components](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/blob/master/cloud-gcp/images/gcp-webbasedterminal-link.png)
+![Docker Components](cloud-gcp/images/gcp-webbasedterminal-link.png)
 
-![Docker Components](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/blob/master/cloud-gcp/images/gcp-webbasedterminal-output.png)
+![Docker Components](cloud-gcp/images/gcp-webbasedterminal-output.png)
 
 
 ### Use Your Own Computer’s Terminal

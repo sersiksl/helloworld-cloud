@@ -14,7 +14,7 @@
 Cloud portability is the selling point: containers typically mean that programmers won't have to rewrite the code for each new operating system and cloud platform. What's more, applications continue to evolve their focus from the narrow, such as a desktop PC, to the wide, such as a cloud that can serve millions of users on a wide variety of mobile and stationary devices. Using containers allows those applications to scale, as well as setting a clear path between source and target platforms. Moving containers from one cloud provider to another is as simple as downloading them onto the new servers.
 
 ## Docker image, container, registry, engine ... how do these work together?
-![Docker Components](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/blob/master/intro-docker-containers/images/DockerComponents.png)
+![Docker Components](intro-docker-containers/images/DockerComponents.png)
 
 ## How do I set-up Docker?
 ###Install Docker on Mac
@@ -98,7 +98,7 @@ To make new software easier to run, **ENV** can be used to update for example th
 *Only for Windows users:*
 The **chmod** commands are needed to avoid security warnings for Docker on Windows. The problem is that the Dockerfile COPY statements add execution permission to files. The chmod commands change the file permissions back to read-only. 
 
-The needed code can be also taken from github: https://github.ibm.com/slobodanka-sersik/helloworld-cloud/tree/master/intro-docker-containers/helloworldinpython.
+The needed code can be also taken from github: /helloworld-cloud/tree/master/intro-docker-containers/helloworldinpython.
 
 
 ### Build the image
@@ -211,7 +211,7 @@ docker build <path to docker file>
 ## Next Steps
 Now that you can create images, you should try to deploy containers on the different clouds:
 
-* [Google Cloud Platform - GCP](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/tree/master/cloud-gcp)
-* [Microsoft Azure](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/tree/master/cloud-ms-azure)
-* [AWS](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/tree/master/cloud-aws)
-* [IBM Cloud](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/tree/master/cloud-ibm-cloud)
+* [Google Cloud Platform - GCP](cloud-gcp)
+* [Microsoft Azure](cloud-ms-azure)
+* [AWS](cloud-aws)
+* [IBM Cloud](cloud-ibm-cloud)

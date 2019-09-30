@@ -12,7 +12,7 @@ AWS Free Tier: https://aws.amazon.com/free/
 
 * 3 Free Tiers
 
-    ![Docker Components](https://github.ibm.com/slobodanka-sersik/helloworld-cloud/blob/master/cloud-aws/images/aws-free-tiers.png)
+    ![Docker Components](cloud-aws/images/aws-free-tiers.png)
     
 * Some free services
     * Amazon DynamoDB (NoSQL) - 25 GB storage
