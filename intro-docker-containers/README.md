@@ -1,219 +1,179 @@
-# Docker Containers
+# Docker Beginner Tutorial
 
-  - [Docker image, container, registry, engine ... how do these work together?](#docker-image-container-registry-engine--how-do-these-work-together)
-  - [How do I set-up Docker?](#how-do-i-set-up-docker)
-      - [Install Docker on Mac](#install-docker-on-mac)
-      - [Install Docker on Windows 10](#install-docker-on-windows-10)
-      - [Have you previously installed Docker Toolbox, Docker Machine, or VirtualBox? (if not, just ignore this section)](#have-you-previously-installed-docker-toolbox-docker-machine-or-virtualbox-if-not-just-ignore-this-section)
-  - [How do I create a Docker Image? ](#how-do-i-create-a-docker-image-)
-    - [Prepare the code for Docker Container](#prepare-the-code-for-docker-container)
-    - [Build the image](#build-the-image)
-  - [Docker Cheat-Sheet](#docker-cheat-sheet)
-  - [Next Steps](#next-steps)
+Disclaimer: This tutorial heavily borrows from: [https://developer.ibm.com/tutorials/building-docker-images-locally-and-in-cloud/](https://developer.ibm.com/tutorials/building-docker-images-locally-and-in-cloud/)
 
+In this tutorial you will learn:
 
-**What do containers have to do with the cloud?**
-Cloud portability is the selling point: containers typically mean that programmers won't have to rewrite the code for each new operating system and cloud platform. What's more, applications continue to evolve their focus from the narrow, such as a desktop PC, to the wide, such as a cloud that can serve millions of users on a wide variety of mobile and stationary devices. Using containers allows those applications to scale, as well as setting a clear path between source and target platforms. Moving containers from one cloud provider to another is as simple as downloading them onto the new servers.
+(1) How to start a container
+(2) The difference between an image and a container
+(3) Container are epheremal
+(4) How to write an easy Dockerfile
+(5) How to persist data created in container 
 
-## Docker image, container, registry, engine ... how do these work together?
-![Docker Components](images/DockerComponents.png)
+Even this is a beginner tutorial it expects you to have Docker installed on your computer.
 
-## How do I set-up Docker?
-### Install Docker on Mac
-Docker for Mac offers a Mac native application that installs in /Applications. It creates symlinks (symbolic links) in /usr/local/bin for docker and docker-compose to the Mac versions of the commands in the application bundle.
+## First Docker Container
 
-The Docker for Mac bundle installs:
-* Docker Engine
-* Docker CLI Client
-* Docker Compose
-* Docker Machine
+Now let's try to start our first container that is based on a centos image:
 
-Download and install: [https://docs.docker.com/docker-for-mac/install/](https://docs.docker.com/docker-for-mac/install/)
+```bash
+docker run -it centos:latest /bin/bash
+```
 
-### Install Docker on Windows 10
-Docker for Windows runs on 64-bit Windows 10 Pro, Enterprise, and Education; 1511 November update, Build 10586 or later. Docker plans to support more versions of Windows 10 in the future.
+As this runs, let’s talk about what’s happening. When you run the docker command, you’re telling Docker that you want the latest copy from the public Docker hub and run it with the shell of /bin/bash. The command runs off to the Internet, sees the version you have, checks against either the SHA of your cached image, or if you don’t have it, pulls it down from Dockerhub. For clarity’s sake, the -it runs it as interactive and creates a tty for the container. You should see the following now:
 
-Download and install: [https://docs.docker.com/docker-for-windows/install/](https://docs.docker.com/docker-for-windows/install/)
+```bash
+Unable to find image 'centos:latest' locally
+latest: Pulling from library/centos
+a02a4930cb5d: Pull complete
+Digest: sha256:184e5f35598e333bfa7de10d8fb1cebb5ee4df5bc0f970bf2b1e7c7345136426
+Status: Downloaded newer image for centos:latest
+[root@2de726a5fcb8 /]#
+```
 
-#### Have you previously installed Docker Toolbox, Docker Machine, or VirtualBox? (if not, just ignore this section)
-Docker for Windows now requires Microsoft’s Hyper-V. Once enabled, VirtualBox will no longer be able to run virtual machines (your VM images will still remain). You can still use docker-machine to manage remote hosts.
+Congratulations! You now have your first running Docker container.
 
-You have the option to import the default VM after installing Docker for Windows from the Settings menu in the System Tray.
+## Container vs. Image
 
-Docker for Windows enables Hyper-V if necessary; this requires a reboot.
+So we used the centos image to start our container. What is the difference between an image and a container?
 
-## How do I create a Docker Image? 
+- Docker Images are read-only templates, from which container are instantiated
+- Docker Images consist of one or more layer
+- Docker Container add an writable layer on top of the images' layer
+- One Docker Image can be used in more than one container at the same time
 
-### Prepare the code for Docker Container
+In short: Docker Container = Docker Image + writable Layer
 
-The application for which we'll build the container is a simple, “Hello World” app that uses Flask, a small HTTP server for Python apps. 
+If you would like to learn more about images, containers and layers, please have a look at: [https://docs.docker.com/storage/storagedriver/](https://docs.docker.com/storage/storagedriver/).
 
-Imagine you’re trying to deploy the following Python code, contained in index.py.
+## Container and (non)persistence
 
-*index.py*
+Go ahead and type exit, and run that docker command again.
 
-~~~python
-import os
+```bash
+[root@2de726a5fcb8 /]# exit
+exit
+$ docker run -it centos:latest /bin/bash
+[root@583c6cec5d41 /]#
+```
 
-from flask import Flask
-app = Flask(__name__)
-@app.route("/")
-def hello():
-    return "Hello World!"
-if __name__ == "__main__":
-    #app.run(host="0.0.0.0", port=int("5000"), debug=True)
-	app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
-~~~
+Notice how the roots @2de726a5fcb8 and @583c6cec5d41 are different? It’s because when you spin up containers this way they are ephemeral. Ephemeral means they only live for the time that they are running, so as soon as you exit it goes away. We’ll show you how to do longer lived containers in a little while.
+Now let’s play around in the container for a second. Being a CentOS machine, the package manager yum is available. Let's use it to install the editor vim.
 
-To do so, create a text file called Dockerfile in your application’s root and paste in the following code.
+```bash
+[root@583c6cec5d41 /]# yum install vim
+```
 
-*Dockerfile*
+Now you can run vim in your container! Try it out.
 
-~~~dockerfile
-FROM python:alpine3.7
-COPY . /app
-WORKDIR /app
-RUN pip install -r requirements.txt
-RUN chmod 444 index.py
-RUN chmod 444 requirements.txt
- 
-# Service must listen to $PORT environment variable.
-# This default value facilitates local development.
-ENV PORT 8080
-CMD python ./index.py
-~~~
+```bash
+ [root@583c6cec5d41 /]# vim
+````
 
-Note that **FROM** directive is pointing to **python:alpine3.7**. This is telling Docker what base image to use for the container, and implicitly selecting the Python version to use, which in this case is 3.7. Docker Hub has base images for almost all supported versions of Python. This example is using Python installed on Alpine Linux, a minimalist Linux distro, which helps keep the images for Docker small. Prefer Alpine unless there’s a compelling reason to use another base image such as Debian Jessie.
+If you don’t know how to exit vim, type: :q and you should see your command prompt again.
 
-Also note is the **RUN** directive that is calling PyPi (**pip**) and pointing to the requirements.txt file. This file contains a list of the dependencies that the application needs to run. Because Flask is a dependency, it is included as such in the **requirements.txt** with a simple reference. You can also select version libraries if you need specific versions with requirements.txt. The file should also be in the root of the application.
+Now type exit again to exit the container.
 
-*requirements.txt*
+```bash
+[root@583c6cec5d41 /]# exit
+exit
+```
 
-~~~
-flask
-~~~
+Start the container again:
 
-The remaining directives in the **Dockerfile** are pretty straightforward. The **CMD** directive tells the container what to execute to start the application. In this case, it is telling Python to run **index.py**. The **COPY** directive simply moves the application into the container image, **WORKDIR** sets the working directory.
+```bash
+$ docker run -it centos:latest /bin/bash
+[root@86f1f3872cbe /]# vim
+bash: vim: command not found
+[root@86f1f3872cbe /]# exit
+exit
+$
+```
 
-To make new software easier to run, **ENV** can be used to update for example the **PORT** environment variable for the software the container installs. The application reads the port from the environment variables `port=int(os.environ.get('PORT', 8080))`.
+And just to reinforce, when your container is gone any and all changes inside it are gone, too. In this case there is no vim editor.
 
-*Only for Windows users:*
-The **chmod** commands are needed to avoid security warnings for Docker on Windows. The problem is that the Dockerfile COPY statements add execution permission to files. The chmod commands change the file permissions back to read-only. 
+## Dockerfile
 
-The needed code can be also taken from github: /helloworld-cloud/tree/master/intro-docker-containers/helloworldinpython.
+Okay, so we can spin up a container and make changes to it, but how do we keep changes around? There are a few ways to do this, we will show you the most common way to achive this: by using a Dockerfile.
 
+Back at your command prompt, make a new directory and change the directory by using your $EDITOR of choice to open a new file called Dockerfile.
 
-### Build the image
+```bash
+$ mkdir docker-tutorial
+$ cd docker-tutorial
+$ $EDITOR Dockerfile
+```
 
-To build the image, run Docker build from a command line or terminal that is in the root directory of the application.
+We’ll hit the highlights of Dockerfiles here, but we strongly suggest you take a look at [the documentation][dockerfile] on Best Practices for them to get a taste of their power.
 
-~~~
-docker build --tag my-python-app .
-~~~
+In your Dockerfile write out the following:
 
-This will “tag” the image my-python-app and build it. After it is built, you can run the image as a container.
+```docker
+FROM centos:latest
+RUN yum install vim -y && mkdir /vim
+WORKDIR /vim
+ENTRYPOINT ["vim"]
+```
 
-~~~
-docker run --name python-app -p 8080:8080 my-python-app
-~~~
+Save the file and make sure it’s called Dockerfile.
 
-This starts the application as a container. The **–name** parameter names the container and the **-p** parameter maps the host’s port 5000 to the containers port of 5000. Lastly, the my-python-app refers to the image to run. After it starts, you should be able to browse to the container. Depending on how you are running Docker depends on what the IP address of the application will be. Docker for Windows and Docker for Mac will be able to use 127.0.0.1. For other instances, it will be the host IP of a VM or physical machine you are running Docker on.
+Let’s talk about what the four lines above mean.
 
-You should be able to open following URL and see your application running:
+- FROM : creates a layer from the centos:latest Docker image
+- RUN : builds your container by installing vim into it and creating a directory called /vim
+- WORKDIR : informs the container where the working directory should be for it
+- ENTRYPOINT : is the command that is run when the container starts, instead of
+/bin/bash like how we did above
 
-~~~
-http://127.0.0.1:8080/
-~~~
+Now let’s build this locally. Run the following in the directory that the Dockerfile is and lets see this come together.
 
+```bash
+$ docker build .
+```
 
-## Docker Cheat-Sheet
+The last line of the docker build output should be similar to this:
 
-Find out the Docker verion
+```bash
+Successfully built eda2652aa25e
+```
 
-~~~
-docker --version
-~~~
+Note: You should have a different hash eda2652aa25e, so please keep that in mind.
 
-Get an image from the Docker Hub Repository - https://hub.docker.com/search?q=&type=image
+Congratulations! You have built your first Dockerfile and customized docker container.
+Let’s give it a run now. Go ahead and run the following command:
 
-~~~
-docker pull ubuntu
-~~~
+```bash
+$ docker run -it eda2652aa25e
+```
 
-Create a container from an image:
+You should see vim start up! Remember, :q is how to quit it, and then you should see your command prompt again. You can run this as many times as you’d like and you’ll have a new instance of vim each time; but you can’t actually save anything or read anything because it’s a container right? Let's fix this in the next chapter.
 
-~~~
-docker run <options> <image_name>
+## Persistence
 
-Options:
---rm remove container automatically after it exits
---it connect the container to terminal
---name <container-name> name the container
--p 5000:80 expose port 5000 externally and map to port 80
-/bin/sh the command to run inside the container
-~~~
+We are going to add a bind mount to mount the local directory into the container. If you’d like to read more about mounts and other possibilities, we suggest starting at [https://docs.docker.com/storage/volumes/](https://docs.docker.com/storage/volumes/) – it’s one of the harder concepts but it’s worth your time.
 
-Access a running container:
+On your command line, create a file called hello, then save the words hello world in it.
 
-~~~
-docker exec -it <CONTAINER-ID> bash
-~~~
+```bash
+$ EDITOR hello
+```
 
+Note: Please your EDITOR of choice on your machine.
 
-Stop a running container
+Now let’s mount the local directory you just created the hello file in into our container.
 
-~~~
-docker stop <CONTAINER-ID>
-~~~
+```bash
+$ docker run -it -v ${PWD}:/vim eda2652aa25e
+```
 
-Kill the container by stopping its execution immediately. 
-The difference between ‘docker kill’ and ‘docker stop’ is that ‘docker stop’ gives the container time to shutdown gracefully, in situations when it is taking too much time for getting the container to stop, one can opt to kill it
+Inside of vim type :e hello. You should see hello world come up! As you can see, you opened the file that you created on the host machine, created a container with vim inside, mounted the directory and was able to open the file!
+If you’d like you can type i and type something out, then type :wq when you’re done. The container should close out, and then you can type the following on your command line:
 
-~~~
-docker kill <CONTAINER-ID>
-~~~
+```bash
+$ cat hello
+hello world
+TEC HandsOn is awesome
+$
+```
 
-Create a new image of an edited container on the local system
-
-~~~
-docker commit <conatainer id> <username/imagename>
-~~~
-
-Push an image to the docker hub repository
-
-~~~
-docker push <username/image name>
-~~~
-
-This command lists all the locally stored docker images
-
-~~~
-docker images
-~~~
-
-Delete a stopped container
-
-~~~
-docker rm <container id>
-~~~
-
-Delete an image from local storage
-
-~~~
-docker rmi <image-id>
-~~~
-
-Build an image from a specified docker file
-
-~~~
-docker build <path to docker file>
-~~~
-
-
-## Next Steps
-Now that you can create images, you should try to deploy containers on the different clouds:
-
-* [Google Cloud Platform - GCP](../cloud-gcp)
-* [Microsoft Azure](../cloud-ms-azure)
-* [AWS](../cloud-aws)
-* [IBM Cloud](../cloud-ibm-cloud)
+Note: Obviously "TEC HandsOn is awesome" is what we wrote and will be what you write inside your container.
