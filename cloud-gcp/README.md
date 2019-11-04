@@ -6,7 +6,7 @@
     - [Use a Web Based Terminal](#use-a-web-based-terminal)
     - [Use Your Own Computer’s Terminal](#use-your-own-computers-terminal)
   - [Configuring Default Settings for GCP](#configuring-default-settings-for-gcp)
-  - [Google Container Registry](#google-container-registry)
+  - [Google Container Engine](#google-container-engine)
     - [Create a Project](#create-a-project)
     - [Push Docker Image on GCP](#push-docker-image-on-gcp)
     - [Build & Run a Container in GCP ](#build--run-a-container-in-gcp-)
@@ -84,7 +84,7 @@ When you create GKE resources after configuring your default project and compute
 Link: https://cloud.google.com/sdk/gcloud/reference/config/set
 
 
-## Google Container Registry
+## Google Container Engine
 
 ### Create a Project
 
@@ -122,7 +122,7 @@ If you already have a docker image that you would like to reuse, you can push it
       e.g. docker push gcr.io/hands-on-helloworld/helloworld-python-app
   ~~~
 
-4. You should be able to see your new image in the Containr registry (https://console.cloud.google.com/gcr/images/hands-on-helloworld?project=hands-on-helloworld)
+4. You should be able to see your new image in the Container registry (https://console.cloud.google.com/gcr/images/hands-on-helloworld?project=hands-on-helloworld)
 
 ![GCP Container Registry](images/gcp-containerregistry.png)
 
