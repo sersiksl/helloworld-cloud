@@ -226,6 +226,8 @@ In MS Azure you have the choice to deploy your container images to:
 
 #### Using Azure Kubernetes Service
 
+_TODO_
+
 
 ## Tutorials
 * Microsoft Azure Tutorial for Beginners (contains good overview of the Azure concepts): https://www.guru99.com/microsoft-azure-tutorial.html
