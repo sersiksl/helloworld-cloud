@@ -91,9 +91,11 @@ Link: https://cloud.google.com/sdk/gcloud/reference/config/set
 1. In the GCP Console (https://console.cloud.google.com/projectselector2/home/dashboard), on the project selector page, select or create a GCP project.
   
   ![GCP Project Dashboard](images/gcp-projectdashboard.png)
+
 2. Give the project a name - e.g. hands-on-helloworld
   
   ![GCP Project Creation](images/gcp-createproject.png)
+
 3. You should be able to see your project dashboard
 
   ![GCP Project View](images/gcp-project.png)
@@ -119,6 +121,7 @@ If you already have a docker image that you would like to reuse, you can push it
   ~~~    docker push [HOSTNAME]/[PROJECT-ID]/[IMAGE]
       e.g. docker push gcr.io/hands-on-helloworld/helloworld-python-app
   ~~~
+
 4. You should be able to see your new image in the Containr registry (https://console.cloud.google.com/gcr/images/hands-on-helloworld?project=hands-on-helloworld)
 
 ![GCP Container Registry](images/gcp-containerregistry.png)
@@ -136,15 +139,19 @@ In GCP yuo have the choice to run your Container:
 2. Choose "Start using Cloud Run"
 
    ![GCP Cloud Run Start Page](images/gcp-cloudrun-start.png)
+
 3. Click on "Create Service"
 
    ![GCP Cloud Run Create Service](images/gcp-cloudrun-createservice.png)
+
 4. Choose the container image using the "SELECT" link and choose "Allow unauthenticated invocations", the rest can be left as per default.
 
    ![GCP Cloud Run Service Creation](images/gcp-cloudrun-servicecreation.png)
+
 5. The service creation might take couple of minutes, and once created you should be able to see your deployed container running in the Google Cloud
 
    ![GCP Cloud Run Start Page](images/gcp-containerrunning.png)
+
 6. You can click on the Container URL and should be able to see your "Hello World" application.
 
 #### Using GKE (Google Kubernetes Engine)
