@@ -152,7 +152,7 @@ You should see vim start up! Remember, :q is how to quit it, and then you should
 
 We are going to add a bind mount to mount the local directory into the container. If you’d like to read more about mounts and other possibilities, we suggest starting at [https://docs.docker.com/storage/volumes/](https://docs.docker.com/storage/volumes/) – it’s one of the harder concepts but it’s worth your time.
 
-On your command line, create a file called hello, then save the words hello world in it.
+On your command line, create a file called hello, then save the words *hello world* in it.
 
 ```bash
 $ EDITOR hello
@@ -177,3 +177,10 @@ $
 ```
 
 Note: Obviously "TEC HandsOn is awesome" is what we wrote and will be what you write inside your container.
+
+Great you have finished this Docker tutorial.
+
+## Additional resources
+
+Besides our other tutorials there is a great Docker Essential course including very good videos explaining Docker. At the end there is a test and if you pass it you will get an badge from Acclaim: [https://cognitiveclass.ai/courses/docker-essentials/](https://cognitiveclass.ai/courses/docker-essentials/)
+
