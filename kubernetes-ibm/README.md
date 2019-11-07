@@ -164,7 +164,7 @@ IBM Cloud provides the capability to run applications in containers on Kubernete
 
 #  Lab overview
 
-[[Lab 0](./Lab%200/README.md) (Optional): Provides a walkthrough for installing IBM Cloud command-line tools and the Kubernetes CLI. You can skip this lab if you have the IBM Cloud CLI, the container-service plugin, the containers-registry plugin, and the kubectl CLI already installed on your machine.
+[Lab 0](./Lab%200/README.md) (Optional): Provides a walkthrough for installing IBM Cloud command-line tools and the Kubernetes CLI. You can skip this lab if you have the IBM Cloud CLI, the container-service plugin, the containers-registry plugin, and the kubectl CLI already installed on your machine.
 
 [Lab 1](./Lab%201/README.md): This lab walks through creating and deploying a simple "hello world" app in Node.JS, then accessing that app.
 
