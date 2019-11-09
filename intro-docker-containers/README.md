@@ -10,7 +10,7 @@ In this tutorial you will learn:
 (4) How to write an easy Dockerfile
 (5) How to persist data created in container 
 
-Even this is a beginner tutorial it expects you to have Docker installed on your computer.
+Even this is a beginner tutorial it expects you to have Docker installed on your computer. If you need help to install Docker, please have a look at [intro-docker-requirements](../intro-docker-requirements)
 
 ## First Docker Container
 
