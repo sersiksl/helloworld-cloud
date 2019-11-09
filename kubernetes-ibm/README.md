@@ -1,4 +1,4 @@
-This tutorial is is a copy of the [IBM Cloud Kubernetes Service lab](https://github.com/IBM/container-service-getting-started-wt). As we had some problems during Lab 1, we decided to adjust it especially with the Container Registry location (de.icr.io vs. us.icr.io).
+This tutorial is a copy of the [IBM Cloud Kubernetes Service lab](https://github.com/IBM/container-service-getting-started-wt). As we had some problems during Lab 1, we decided to adjust it especially with the Container Registry location (de.icr.io vs. us.icr.io).
 
 The original tutorial consists of 6 Labs. For a Kubernetes introduction we only use Lab 0-2. When you finish Lab 2 you are invited to do the other Labs starting with Lab 3 at [https://github.com/IBM/container-service-getting-started-wt/tree/master/Lab%203](https://github.com/IBM/container-service-getting-started-wt/tree/master/Lab%203)
 
@@ -170,3 +170,9 @@ IBM Cloud provides the capability to run applications in containers on Kubernete
 [Lab 1](./Lab%201/README.md): This lab walks through creating and deploying a simple "hello world" app in Node.JS, then accessing that app.
 
 [Lab 2](./Lab%203/README.md): Builds on lab 1 to expand to a more resilient setup which can survive having containers fail and recover. Lab 2 will also walk through basic services you need to get started with Kubernetes and the IBM Cloud Kubernetes Service.
+
+## What's next
+
+You might want to follow the Labs of the original Tutorial: [https://github.com/IBM/container-service-getting-started-wt](https://github.com/IBM/container-service-getting-started-wt)
+
+Or if you are interested in receiving an Acclaim Badge check out this course: [https://cognitiveclass.ai/courses/kubernetes-course](https://cognitiveclass.ai/courses/kubernetes-course).
