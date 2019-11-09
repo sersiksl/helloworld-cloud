@@ -48,7 +48,7 @@ This is a list of some of the namespaces that are commonly used and visible to t
 
 Traditional applications are run on native hardware. A single application does not typically use the full resources of a single machine. We try to run multiple applications on a single machine to avoid wasting resources. We could run multiple copies of the same application, but to provide isolation we use VMs to run multiple application instances (VMs) on the same hardware. These VMs have full operating system stacks which make them relatively large and inefficient due to duplication both at runtime and on disk.
 
-![Containers versus VMs](images/VMvsContainer.png)
+![Containers versus VMs](./images/VMvsContainer.png)
 
 Containers allow you to share the host OS. This reduces duplication while still providing the isolation. Containers also allow you to drop unneeded files such as system libraries and binaries to save space and reduce your attack surface. If SSHD or LIBC are not installed, they cannot be exploited.
 
@@ -96,7 +96,7 @@ At its core, Kubernetes is a data store (etcd). The declarative model is stored 
 
 As shown, API server is a simple HTTP server handling create/read/update/delete(CRUD) operations on the data store. Then the controller picks up the change you wanted and makes that happen. Controllers are responsible for instantiating the actual resource represented by any Kubernetes resource. These actual resources are what your application needs to allow it to run successfully.
 
-![architecture diagram](/images/kubernetes_arch.png)
+![architecture diagram](./images/kubernetes_arch.png)
 
 # Kubernetes resource model
 
@@ -121,7 +121,7 @@ Kubernetes Infrastructure defines a resource for every purpose. Each resource is
 * and more...
 
 
-![Relationship of pods, nodes, and containers](/images/container-pod-node-master-relationship.jpg)
+![Relationship of pods, nodes, and containers](./images/container-pod-node-master-relationship.jpg)
 
 Kubernetes does not have the concept of an application. It has simple building blocks that you are required to compose. Kubernetes is a cloud native platform where the internal resource model is the same as the end user resource model.
 
@@ -140,7 +140,7 @@ Kubernetes provides us with a client interface through ‘kubectl’. Kubectl co
 
 # Kubernetes application deployment workflow
 
-![deployment workflow](/images/app_deploy_workflow.png)
+![deployment workflow](./images/app_deploy_workflow.png)
 
 1. User via "kubectl" deploys a new application. Kubectl sends the request to the API Server.
 2. API server receives the request and stores it in the data store (etcd). Once the request is written to data store, the API server is done with the request.
