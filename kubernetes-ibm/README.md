@@ -24,7 +24,7 @@ This lab is an introduction to using containers on Kubernetes in the IBM Cloud K
 * Secure and monitor your cluster and app
 
 ## Prerequisites
-* A Pay-As-You-Go or Subscription [IBM Cloud account](https://cloud.ibm.com/registration/)
+* A Pay-As-You-Go or Subscription [IBM Cloud account](https://cloud.ibm.com/registration/). If your IBM Account is not a Pay-As-You-Go account and there does not allow to create a free kubernetes cluster, please ask a coach for help.
 
 ## Virtual machines
 
